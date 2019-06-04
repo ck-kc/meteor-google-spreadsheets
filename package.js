@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Npm.depends({
-  "google-spreadsheets": "0.5.1",
+  "google-spradsheets": "git+https://github.com/ck-kc/node-google-spreadsheets#master"
   "googleclientlogin": "0.2.8",
   "edit-google-spreadsheet": "0.2.21"
 });
