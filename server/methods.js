@@ -12,15 +12,17 @@ Meteor.methods({
   // worksheet = 0-based index of worksheet
   // range = "R1C1:R5C5"
   // headerRow = 1-based index of row containing header, if there is a header
-  'spreadsheet/fetch': function (key, worksheet, range, headerRow) {
+  'spreadsheet/fetch': function (key, auth, worksheet, range, headerRow) {
     check(key, String);
+    check(auth, String);
     check(worksheet, Match.Optional(String))
     check(range, Match.Optional(String))
     check(headerRow, Match.Optional(Number))
     if (!worksheet) worksheet = 0;
     var fut = new Future(); //don't return until we're done importing
     GoogleSpreadsheets({
-        key: key
+        key: key,
+        auth: auth
     }, Meteor.bindEnvironment( function(error, spreadsheet) {
         if (error) {
           console.log("Error getting Google sheet with key " + key + ":", error);
