@@ -2,7 +2,7 @@ Package.describe({
   summary: "Google Spreadsheets",
   name: "ck-kc:google-spreadsheets",
   version: "0.5.1",
-  git: "https://github.com/ongoworks/meteor-google-spreadsheets"
+  git: "https://github.com/ck-kc/meteor-google-spreadsheets"
 });
 
 Npm.depends({
